@@ -1,26 +1,14 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// src/pages/Home.jsx
+import React from 'react';
+import RoomForm from '../components/RoomForm';
 
-function Home() {
-  const [roomId, setRoomId] = useState("");
-  const navigate = useNavigate();
-
+const Home = () => {
   return (
-    <div className="h-screen flex flex-col items-center justify-center gap-4">
-      <input
-        className="border p-2 rounded"
-        placeholder="Enter Room ID"
-        value={roomId}
-        onChange={(e) => setRoomId(e.target.value)}
-      />
-      <button
-        className="bg-blue-500 text-white px-4 py-2 rounded"
-        onClick={() => navigate(`/room/${roomId}`)}
-      >
-        Join Room
-      </button>
+    <div>
+      <h1>Welcome to Zoom Clone</h1>
+      <RoomForm />
     </div>
   );
-}
+};
 
 export default Home;
